@@ -7,7 +7,7 @@ from pandas import read_csv
 
 DEFAULT_DIRECTORY = "/Volumes/4TB/Users/MB/Library/CloudStorage/GoogleDrive-mb@ivi3.com/My Drive/GTI_local/Simos/Logs"
 
-def is_has_hrpm(filename):
+def has_hrpm(filename):
     """Check if the filename already contains 'HRPM'."""
     base_name = os.path.splitext(filename)[0]  # Get the base name without extension
     return "HRPM" in base_name
