@@ -6,10 +6,18 @@ import re
 from pandas import read_csv
 from dotenv import load_dotenv
 
-load_dotenv()
+# Get the directory of the currently running script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the path to the .env file
+env_path = os.path.join(script_dir, '.env')
+print(f'env_path={env_path}')
+
+# Load environment variables from the .env file
+load_dotenv(dotenv_path=env_path)
 
 DEFAULT_DIRECTORY = os.getenv('DEFAULT_DIRECTORY')
-print(DEFAULT_DIRECTORY)
+print(f'DEFAULT_DIRECTORY={DEFAULT_DIRECTORY}')
 
 def extract_tune_name(tune_field):
     """Extract the tune name from the 'SimosTools' field."""
@@ -108,7 +116,9 @@ if __name__ == "__main__":
         handle_file(file_path)
     else:
         directory = DEFAULT_DIRECTORY
+        print(os.listdir(directory))
         for filename in os.listdir(directory):
+            print(filename)
             if filename.endswith(".csv"):
                 file_path = os.path.join(directory, filename)
                 print(file_path)
