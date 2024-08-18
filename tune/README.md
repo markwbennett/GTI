@@ -11,6 +11,7 @@ The tune uses:
 Files are:
 
 BINs, which are the binary files uploaded to the ECU,
-A2Ls, which are the xml definition files that TunerPro uses to map locations in the BIN to human-readable and editable fields.
+XDFs, which are the xml definition files that TunerPro uses to map locations in the ECU's memory to human-readable and editable fields.
+A2Ls, which are the xml files that describe all of the locations in the ECU's memory.
 Logs, which are the CSV log files that Simostools records,
 PID lists, which are the csv files that tell SimosTools what parameters to log, and what they mean.
