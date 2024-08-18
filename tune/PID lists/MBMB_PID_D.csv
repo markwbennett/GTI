@@ -1,0 +1,121 @@
+Name,Unit,Equation,Format,Address,Length,Signed,ProgMin,ProgMax,WarnMin,WarnMax,Smoothing,Enabled,Tabs,Assign To
+Accel. Lat,m/s2,(x - 127) / 10,%01.2f,0xd000ee2a,1,FALSE,-10,10,-1000,1000,0.8,TRUE,DEFAULT|BAR_H|2.PERFORMANCE,
+Accel. Long,m/s2,(x - 512) / 32,%01.2f,0xd00141ba,2,FALSE,-10,10,-1000,1000,0.4,TRUE,DEFAULT|BAR_V|2.PERFORMANCE,accel_long
+Airmass,g/stk,x * 1000,%01.2f,0xd00097b4,4,FALSE,0,2,-100,1000,0,TRUE,AIRFLOW,
+Airmass SP,mg/stk,x * 1000000,%01.0f,0xd00097b4,4,FALSE,0,2000,-100,50000,0,TRUE,AIRFLOW,
+Ambient Press,kpa,x / 120.60176665,%01.2f,0xd0013c76,2,FALSE,0,110,0,120,0.9,TRUE,MISC,amb_press
+Ambient Temp,Â°C,(x - 64) / 1.33,%01.2f,0xd000c177,1,FALSE,-25,45,-100,100,0.9,TRUE,MISC,
+Battery Volts,V,x / 51.2,%01.1f,0xd0015172,2,TRUE,10,15,7,16,0.7,TRUE,MISC.Readiness,
+Boost,psi,(map - amb_press) * 0.145077,%01.1f,0xffffffff,1,FALSE,-15,35,-15,35,0,TRUE,AIRFLOW.DEFAULT|ROUND|0.MBMB,
+Calc TQ,nm,tq,%01.0f,0xffffffff,1,FALSE,0,550,-1000,1000,0,TRUE,DEFAULT|BAR_V|1.POWER.MBMB.PERFORMANCE,
+Calc HP,hp,hp,%01.0f,0xffffffff,1,FALSE,0,400,-1000,1000,0,TRUE,POWER,
+Calc 0-60mph,s,speed_zero_sixty,%01.2f,0xffffffff,1,FALSE,0,10,-1000,256000,0,TRUE,PERFORMANCE,
+Calc 60-130mph,s,speed_sixty_onethirty,%01.2f,0xffffffff,1,FALSE,0,15,-1000,256000,0,TRUE,PERFORMANCE.MBMB,
+Calc 0-60ft,s,dist_zero_sixty,%01.2f,0xffffffff,1,FALSE,0,8,-1000,256000,0,TRUE,PERFORMANCE,
+Calc 1/8mile,s,dist_emile,%01.2f,0xffffffff,1,FALSE,0,12,-1000,256000,0,TRUE,PERFORMANCE,
+Calc 1/4mile,s,dist_qmile,%01.2f,0xffffffff,1,FALSE,0,25,-1000,256000,0,TRUE,PERFORMANCE,
+Comb Mode,,x,%01.2f,0xd000c36e,1,FALSE,-10,10,-100,100,0,TRUE,,
+Coolant Temp,Â°C,(x - 64) / 1.33,%01.0f,0xd000c6f5,1,FALSE,-50,130,-100,150,0.8,TRUE,Readiness,
+Cruise,,x,%01.0f,0xd001b6cd,1,FALSE,0,1,-1000,1000,0,TRUE,,cruise
+DV Position,%,x / 655.36,%01.1f,0xd0011db2,2,FALSE,0,100,-1000,5000,0,TRUE,Yaktuner,
+EOI Actual,Â°,x / 2.6666666667,%01.0f,0xd0013982,2,FALSE,0,720,-1000,1000,0,TRUE,,
+EOI Limit,Â°,x / 2.6666666667,%01.0f,0xd001397a,2,FALSE,0,720,-1000,1000,0,TRUE,,
+Engine Speed,rpm,x,%01.0f,0xd0012400,2,FALSE,0,7000,-1,6000,0,TRUE,DEFAULT|ROUND|0.WG.FUEL.AIRFLOW.IGNITION.POWER.Yaktuner,rpm
+Eth Content,%,x / 2.55,%01.0f,0xd000c1d4,1,FALSE,0,100,-100,100,0,TRUE,,
+Exh Cam Position,Â°,x / 128,%01.1f,0xd001566e,2,TRUE,-45,45,-100,100,0,TRUE,,
+Exh Flow Fac,,x / 16384,%01.2f,0xd0011e04,2,FALSE,0,1.5,-1,10,0,TRUE,Yaktuner,
+Exh Pres Desired,kpa,x / 120.60176665,%01.0f,0xd0011eba,2,FALSE,0,500,-100,1000,0,TRUE,,
+FP DI,kpa,x / 1.884402603,%01.0f,0xd00136ac,2,FALSE,0,28000,0,28000,0,TRUE,FUEL,
+FP DI SP,kpa,x / 1.8844026039,%01.0f,0xd0013640,2,FALSE,0,28000,-1000,30000,0,TRUE,FUEL,
+FP MPI,kpa,x / 3.7688052079,%01.0f,0xd0011b26,2,FALSE,0,1500,-1000,2000,0,TRUE,FUEL,
+FP MPI SP,kpa,x / 3.7688052079,%01.0f,0xd001360c,2,FALSE,0,1500,-1000,2000,0,TRUE,FUEL,
+Fuel Flow,mg/stk,x / 47.181425486,%01.0f,0xd0013636,2,FALSE,-100,100,-100,1000,0,TRUE,FUEL,
+Fuel Flow SP,mg/stk,x / 47.181425486,%01.0f,0xd00135e0,2,FALSE,-100,100,-100,1000,0,TRUE,FUEL,
+Fuel Split MPI,,x / 128,%01.0f,0xd00192b1,1,FALSE,-100,100,-100,100,0,TRUE,FUEL,
+Fuel Trim,%,stft + ltft,%01.1f,0xffffffff,1,FALSE,-35,35,-1000,1000,0,TRUE,FUEL.DEFAULT|ROUND|4,
+Gear,gear,x,%01.0f,0xd000f39a,1,FALSE,0,6,-1,7,0,TRUE,,gear
+HPFP Eff Vol,%,x / 655.35999999,%01.0f,0xd001363c,2,FALSE,-100,100,-1000,1000,0,TRUE,,
+IAT,Â°C,(x - 64) / 1.33,%01.1f,0xd000c179,1,FALSE,-50,70,-30,100,0.9,TRUE,MISC.DEFAULT|BAR_V|4,
+Ign Table,Â°,(x - 95) / 2.66667,%01.1f,0xd000e57e,1,FALSE,-5,15,-100,100,0,TRUE,IGNITION,
+Ign Avg,Â°,(x - 95) / 2.66667,%01.1f,0xd000e59c,1,FALSE,-5,15,-100,100,0,TRUE,IGNITION,
+Inj PW DI,ms,x / 250,%01.1f,0xd0013b16,2,FALSE,-25,25,-1000,1000,0,TRUE,FUEL,
+Inj PW MPI,ms,x / 250,%01.1f,0xd0013824,2,FALSE,0,100,-1000,1000,0,TRUE,FUEL,
+Intake Cam Pos,Â°,x / 128,%01.1f,0xd001566c,2,TRUE,-100,100,-100,100,0,TRUE,,
+Int Flow Fac,,x / 16384,%01.2f,0xd0011e08,2,FALSE,0,20,-1000,1000,0,TRUE,Yaktuner,
+Knock Avg,Â°,(x - 128) / 2.66,%01.2f,0xd001988e,1,FALSE,0,-5,-3,3,0,TRUE,IGNITION.DEFAULT|BAR_V|4,
+Knock Cyl 1,�,(x - 128) / 2.6667,%01.2f,0xd0019884,1,FALSE,0,-5,-5,1000,0,TRUE,IGNITION,knock_a
+Knock Cyl 2,�,(x - 128) / 2.6667,%01.2f,0xd0019885,1,FALSE,0,-5,-5,1000,0,TRUE,IGNITION,knock_b
+Knock Cyl 3,�,(x - 128) / 2.6667,%01.2f,0xd0019886,1,FALSE,0,-5,-5,1000,0,TRUE,IGNITION,knock_c
+Knock Cyl 4,�,(x - 128) / 2.6667,%01.2f,0xd0019887,1,FALSE,0,-5,-5,1000,0,TRUE,IGNITION,knock_d
+Lambda,l,x / 32767.999999,%01.2f,0xd00120e2,2,FALSE,0.5,1.5,-0.1,5,0,TRUE,FUEL,
+Lambda SP,l,x / 1024,%01.2f,0xd00143f6,2,FALSE,0,2,-100,500,0,TRUE,FUEL,
+LPFP Duty,%,x / 655.35999999,%01.0f,0xd0013600,2,FALSE,0,100,-1000,100,0,TRUE,FUEL,
+LTFT,%,x / 1.28 - 100.0,%01.1f,0xd000f00b,1,FALSE,-25,25,-20,20,0.7,TRUE,FUEL,ltft
+MAP,kpa,x / 1000,%01.1f,0xd00098cc,4,FALSE,0,300,-300,300,0,TRUE,AIRFLOW,map
+MAP SP,kpa,x / 1000,%01.1f,0xd00098f4,4,FALSE,0,300,-300,300,0,TRUE,AIRFLOW,
+Misfires,,x,%01.0f,0xd0014504,2,FALSE,0,10,-1,10,0,TRUE,MISC.DEFAULT|BAR_V|3,
+Oil Temp,Â°C,x - 40,%01.0f,0xd000c5ae,1,FALSE,-25,120,-1000,1000,0.9,TRUE,MISC.Readiness,
+Pedal Pos,%,x / 10.24,%01.1f,0xd0012028,2,FALSE,0,100,-1000,1000,0,TRUE,Yaktuner,pedal
+Port Flap Pos,%,x,%01.0f,0xd0000aa1,1,FALSE,0,1,-1000,1000,0,TRUE,,
+PUT,kpa,x / 1000,%01.1f,0xd00098fc,4,FALSE,0,300,-1000,300,0,TRUE,AIRFLOW.Yaktuner.DEFAULT|BAR_V|5,put
+PUT SP,kpa,x / 120.601766,%01.1f,0xd0011eee,2,FALSE,0,300,-1000,1000,0,TRUE,AIRFLOW.Yaktuner.DEFAULT|BAR_V|5,put_sp
+SOI Actual,Â°,x / 2.666666666667,%01.0f,0xd0013a44,2,FALSE,0,720,-1000,1000,0,TRUE,,
+SOI Limit,Â°,x / 2.666666666667,%01.0f,0xd0013a42,2,FALSE,0,720,-1000,1000,0,TRUE,,
+STFT,%,x / 1.28 - 100,%01.0f,0xd000f00c,1,FALSE,-25,25,-20,20,0.8,TRUE,FUEL,stft
+Torque,Nm,x / 32,%01.1f,0xd0015344,2,TRUE,-40,500,-1000,1000,0,TRUE,POWER.DEFAULT|BAR_V|1,
+Torque Lim,,x,%01.0f,0xd0011f0c,2,FALSE,0,512,-1000,1000,0,TRUE,POWER,
+Torque Req,Nm,x / 32,%01.1f,0xd0012048,2,TRUE,-40,500,-1000,500,0,TRUE,POWER,tq_rep
+TPS,%,x / 2.142128661087,%01.2f,0xd000f377,1,FALSE,0,100,-1000,1000,0,TRUE,,
+Trans Temp,Â°C,x - 40,%01.0f,0xd000f3c1,1,FALSE,-50,100,-1000,120,0.9,TRUE,,
+Turbo Speed,krpm,x / 163.84,%01.1f,0xd0011e76,2,FALSE,0,195,-100,190,0,TRUE,AIRFLOW,
+Valve Lift Pos,,x,%01.0f,0xd0019b75,1,FALSE,0,1,-1000,1000,0,TRUE,Yaktuner,
+Vehicle Speed,km/h,x / 100,%01.0f,0xd00155b6,2,FALSE,0,250,-1000,250,0,TRUE,,speed
+WG Flow Des,kg/hr,x / 32,%01.1f,0xd0011e42,2,FALSE,0,1024,-1000,10000,0,TRUE,WG,
+WG I Value,%,x / 327.68,%01.1f,0xd0015c26,2,TRUE,-100,100,-1000,1000,0,TRUE,WG,
+WG P-D Value,%,x / 327.68,%01.1f,0xd0015c2e,2,TRUE,-100,100,-1000,1000,0,TRUE,WG,
+WG Pos Base,%,x / 655.3599999999997,%01.1f,0xd0015c2c,2,FALSE,0,100,-1000,1000,0,TRUE,WG.Yaktuner,
+WG Pos Final,%,x / 655.3599999999997,%01.1f,0xd0011e10,2,FALSE,0,100,-1000,1000,0,TRUE,WG.Yaktuner,
+WG Voltage,V,x / 6553.6,%01.2f,0xd0011ddc,2,TRUE,0,5,-10,10,0,TRUE,WG,
+Wheel Speed FL,km/h,x / 100,%01.0f,0xd001b7fa,2,FALSE,0,250,-1000,250,0,TRUE,,wheel_fl
+Wheel Speed FR,km/h,x / 100,%01.0f,0xd001b800,2,FALSE,0,250,-1000,250,0,TRUE,,wheel_fr
+Wheel Speed RL,km/h,x / 100,%01.0f,0xd001b806,2,FALSE,0,250,-1000,250,0,TRUE,,wheel_rl
+Wheel Speed RR,km/h,x / 100,%01.0f,0xd001b80c,2,FALSE,0,250,-1000,250,0,TRUE,,wheel_rr
+Wheel Slip,km/h,(wheel_fl+wheel_fr-wheel_rl-wheel_rr)/2,%01.0f,0xffffffff,2,FALSE,0,250,-1000,250,0,TRUE,mbmb,wheel_slip
+Misfire Carb A 1,,x,%01.0f,0xd00144ac,2,FALSE,0,100,0,100,0,TRUE,ERRORS|BAR_H,
+Misfire Carb A 2,-,x,%01.0f,0xd00144ae,2,FALSE,0,100,0,100,0,TRUE,ERRORS|BAR_H,
+Misfire Carb A 3,-,x,%01.0f,0xd00144b0,2,FALSE,0,100,0,100,0,TRUE,ERRORS|BAR_H,
+Misfire Carb A 4,-,x,%01.0f,0xd00144b2,2,FALSE,0,100,0,100,0,TRUE,ERRORS|BAR_H,
+Misfire Sum,,x,%01.0f,0xd0014508,2,FALSE,0,10,-1,200,0,TRUE,,mis_sum_a
+CPU Load,%,x / 10.24,%01.1f,0xd00137d2,2,FALSE,0,100,-10,110,0,TRUE,,cpu_load
+Fuel Flow HPFP,mg/stk,x / 47.181425486,%01.0f,0xd0013636,2,FALSE,-100,100,-100,1000,0,TRUE,Fuel,
+Fuel Flow LPFP,g/min,x / 4.194304000112986,%01.0f,0xd0013650,2,FALSE,0,3500,-100,10000,0,TRUE,,kfflafin_w
+Fuel Level Pct,%,x / 2.55,%01.0f,0xd000dda1,1,FALSE,0,100,-100,200,0,TRUE,Fuel.Readiness,ftl_sae
+Fuel Level,l,x / 10,%01.1f,0xd001722e,2,FALSE,0,255,0,255,0,FALSE,Fuel.Readiness,
+Knock Retard Now,-,x,%01.0f,0xd000253b,1,FALSE,0,1,0,1,0,TRUE,ERRORS|BAR_V|1,knocknow
+Leak Upthrottle Now,-,x,%01.0f,0xd0012687,1,FALSE,0,1,0,1,0,TRUE,ERRORS|BAR_V,leakupthrnow
+Misfire Now,-,x,%01.0f,0xd0012ab9,1,FALSE,0,1,0,1,0,TRUE,ERRORS|BAR_V,misfirenow
+Oil fill level,mm,x / 16,%01.2f,0xd00122e4,2,FALSE,0,127,0,127,0,TRUE,Oil.Readiness,
+PUT-PUT_SP,,put-put_sp,%01.2f,0xffffffff,2,TRUE,-15,15,-1000,1000,0,TRUE,Airflow.mbmb,
+Turbo Protection Status,,x,%01.0f,0xd0011f0c,2,FALSE,0,512,-1000,1000,0,TRUE,POWER,tq_prot
+Torque Max,Nm,x / 32,%01.0f,0xd0015444,2,FALSE,0,600,-1000,1000,0,TRUE,,tqi_pow_max
+mil_last,-,x + mil_new,%01.0f,0xffffffff,1,FALSE,0,1,0,1,0,TRUE,ERRORS.mbmb,mil_last
+mil_new,-,x - mil_last,%01.0f,0xd0001040,1,TRUE,0,1,0,1,0,TRUE,,mil_new
+lih_tqi_last,-,x + lih_tqi_new,%01.0f,0xffffffff,1,FALSE,0,1,0,1,0,TRUE,ERRORS.mbmb,lih_tqi_last
+lih_tqi_new,-,x - lih_tqi_last,%01.0f,0xd0001262,1,TRUE,0,1,0,1,0,TRUE,,lih_tqi_new
+tqi_mon_1_last,-,x + tqi_mon_1_new,%01.0f,0xffffffff,1,FALSE,0,1,0,1,0,TRUE,ERRORS.mbmb,tqi_mon_1_last
+tqi_mon_1_new,-,x - tqi_mon_1_last,%01.0f,0xd0012b95,1,TRUE,0,1,0,1,0,TRUE,,tqi_mon_1_new
+pos_tqi_mon_1_new,-,(((tqi_mon_1_new ^ 2)^ 0.5) + tqi_mon_1_new)/2,%01.0f,0xffffffff,1,FALSE,0,1,0,1,0,TRUE,ERRORS.mbmb,pos_tqi_mon_1_new
+pos_tqi_new,-,(((tqi_new ^ 2)^ 0.5) + tqi_new)/2,%01.0f,0xffffffff,1,FALSE,0,1,0,1,0,TRUE,,pos_tqi_new
+pos_lih_tqi_new,-,(((lih_tqi_new ^ 2)^ 0.5) + lih_tqi_new)/2,%01.0f,0xffffffff,1,FALSE,0,1,0,1,0,TRUE,ERRORS.mbmb,pos_lih_tqi_new
+pos_mil_new,-,(((mil_new ^ 2)^ 0.5) + mil_new)/2,%01.0f,0xffffffff,1,FALSE,0,1,0,1,0,TRUE,,pos_mil_new
+cumulative_new_trigger,-,pos_tqi_mon_1_new + pos_tqi_new + pos_lih_tqi_new  + pos_mil_new,%01.0f,0xffffffff,1,FALSE,0,1,0,1,0,TRUE,,c_new_trigger
+tq_prot_last,-,x+tq_prot_new,%01.0f,0xffffffff,2,FALSE,0,512,-1000,1000,0,TRUE,POWER,
+tq_prot_new,-,x-tq_prot,%01.0f,0xffffffff,2,FALSE,0,512,-1000,1000,0,TRUE,POWER,
+Clutch switch is active,-,x,%01.0f,0xd00016db,1,FALSE,0,1,0,1,0,TRUE,,
+PUT I Inhibit,-,x,%01.0f,0xd0000b76,1,FALSE,0,1,-1000,1000,0,TRUE,Yaktuner,
+LAMB_SP_FIL_HOM,,x * 0.0000610352,%01.2f,0xd0014384,2,FALSE,0.75,1.25,-100,100,0,TRUE,Yaktuner,
+MAF_COR,,x / 327.6799999999992,%01.1f,0xd0013d58,2,TRUE,-1,1,-100,100,0,TRUE,Yaktuner,
+FAC_LAM_OUT,,x * 0.00152588,%01.1f,0xd0014326,2,TRUE,-50,50,-100,100,0,TRUE,Yaktuner,
+state_lam,,x,%01.0f,0xd001990e,1,FALSE,0,4,-1000,1000,0,TRUE,Yaktuner,
+FAC_DIF_LAM_IN,,x * 0.0000305176,%01.2f,0xd00142e4,2,TRUE,-1,1,-100,100,0,TRUE,Yaktuner,
+NR_TRANS_TYP,-,x,%01.1f,0xd000f38f,1,FALSE,1,5,1,5,0,TRUE,mbmb,

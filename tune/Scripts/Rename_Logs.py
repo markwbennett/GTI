@@ -4,14 +4,12 @@ import os
 import sys
 import re
 from pandas import read_csv
+from dotenv import load_dotenv
 
-DEFAULT_DIRECTORY = "/Volumes/4TB/Users/MB/Library/CloudStorage/GoogleDrive-mb@ivi3.com/My Drive/GTI_local/Simos/Logs"
+load_dotenv()
 
-def has_hrpm(filename):
-    """Check if the filename already contains 'HRPM'."""
-    base_name = os.path.splitext(filename)[0]  # Get the base name without extension
-    return "HRPM" in base_name
-
+DEFAULT_DIRECTORY = os.getenv('DEFAULT_DIRECTORY')
+print(DEFAULT_DIRECTORY)
 
 def extract_tune_name(tune_field):
     """Extract the tune name from the 'SimosTools' field."""
@@ -113,4 +111,5 @@ if __name__ == "__main__":
         for filename in os.listdir(directory):
             if filename.endswith(".csv"):
                 file_path = os.path.join(directory, filename)
+                print(file_path)
                 handle_file(file_path)
