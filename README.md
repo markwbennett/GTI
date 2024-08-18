@@ -1,5 +1,5 @@
 # GTI
-2015 GTI 4-Door Autobahn
+2015 GTI 4-Door Autobahn, built for long fast safe drives (think "1000 miles in 12 hours including stops").
 
 Power:  
 * Garrett PowerMax 2260S turbo.
@@ -20,12 +20,12 @@ Drivetrain:
 * Koni Special Active shocks.
 
 Lighting: 
-- Hella 500 driving lights, mounted to grille with 3D-printed brackets.
+- Hella 500 driving lights, mounted to grille with 3D-printed brackets. Wired to come on with stock driving lights.
 - Ed's HID headlights.
 
 Comfort:
 * Custom billet driver seat front spacers, raising front of driver seat >1in for more thigh support.
-* Rear headrest delete.
+* Rear headrests removed.
   
 Navigation and ECM:
 * AL Priority Parking Sensor with two front sensors.
@@ -37,4 +37,4 @@ Miscellaneous
 * Full-size spare wheel:
   - 16x6.5 5-112 et42 steel wheel with same tire as everyday wheels.
   - 3D printed extender for wheel hold-down.
-  - Fender subwoofer wire extended 6in.
+  - Fender subwoofer wire extended 6in to accomodate taller spare.
